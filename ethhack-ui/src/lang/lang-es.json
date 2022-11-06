@@ -1,0 +1,50 @@
+{
+  "Tap to copy address": "Toca para copiar esta dirección. Compártalo con el remitente por mensaje de texto o correo electrónico.",
+  "Address has been copied to clipboard": "La dirección ha sido copiada al portapapeles",
+  "All wallets": "Todas las billeteras",
+
+	"bitcoin price": "precio de bitcoin",
+	"All time": "Todos",
+	"Year": "Año",
+	"Month": "Mes",
+	"Week" : "Semana",
+	"Day"  : "Día",
+
+	"Jan"  : "Ene",
+	"Feb"  : "Feb",
+	"Mar"  : "Mar",
+	"Apr"  : "Abr",
+	"May"  : "Mayo",
+	"Jun"  : "Jun",
+	"Jul"  : "Jul",
+	"Aug"  : "Ago",
+	"Sep"  : "Sep",
+	"Oct"  : "Oct",
+	"Nov"  : "Nov",
+	"Dec"  : "Dic",
+
+  "title" : {
+    "root": "tablero",
+    "send":    "enviar",
+    "receive": "recibir",
+    "scan":    "escanear",
+    "log":     "actas",
+    "charts":  "gráficos"
+  },
+
+  "cur": {
+    "BTC"  : "Ƀ",
+    "mBTC" : "mɃ",
+    "mkBTC" : "mkɃ",
+    "sat" : "sat(Ƀ)",
+    "USD": "$" ,
+    "CNY": "¥",
+    "EUR": "€",
+    "GBP": "£",
+    "THB": "฿",
+    "SAR": "﷼",
+    "RUB": "₽",
+    "KRW": "₩",
+    "JPY": "¥"
+  }
+}

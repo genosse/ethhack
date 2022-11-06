@@ -1,0 +1,38 @@
+{
+  "Tap to copy address": "Tap to copy this address\nShare it with the sender via text or email",
+  "log":     "log",
+  "Use total available minus fee 1": "Use total available minus fee ",
+  "Use total available minus fee 2": "",
+  "cur": {
+    "BTC"  : "Ƀ",
+    "BCH"  : "ɃCH",
+    "mBTC" : "mɃ",
+    "mkBTC" : "mkɃ",
+    "sat" : "sat(Ƀ)",
+    "AMD": "֏",
+    "USD": "$" ,
+    "CNY": "¥",
+    "EUR": "€",
+    "GBP": "£",
+    "THB": "฿",
+    "SAR": "﷼",
+    "RUB": "₽",
+    "KRW": "₩",
+    "JPY": "¥"
+  },
+  "title": {
+    "root":"dashboard",
+    "menu":"menu",
+    "send":"send",
+    "scan":"scan",
+    "receive":"receive",
+    "log":"history",
+    "charts":"charts",
+    "exchange":"Convert",
+    "tx":"{{cur}} transaction",
+    "confirm":"confirm send {{cur}}",
+    "cards":"cards"
+  },
+  "blocks": "{{count}} block",
+  "blocks_plural": "{{count}} blocks"
+}

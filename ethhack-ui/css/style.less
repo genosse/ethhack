@@ -1,0 +1,146 @@
+//@import 'reset.css';
+@import './clickable';
+@import '../src/containers/Root';
+//@import '../src/components/Footer';
+//
+
+@import './vars.less';
+
+a {
+  text-decoration: none;
+  color: @black-color;
+  //color: black;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.4vh;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  //box-shadow: inset 0 0 15px grey; 
+  //border-radius: 10px;
+  opacity: 0;
+  //width: 2px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: @gray-color;
+  border-radius: 0.2vh;
+  opacity: 0.5;
+}
+
+body, html {
+  font-family: 
+    'Roboto Mono', Roboto,
+    --apple-system,
+    Helvetica Neue,
+    //SF,
+    //Tsukushi, 
+    //'irohamaru mikami', 
+    //Terminus,
+    Arial;
+  color: @base-color;
+  text-align: center;
+  overflow: hidden;
+}
+
+pre, button, textarea {
+  font-family: 'Roboto Mono';
+}
+
+input {
+  font-family: 
+    //'irohamaru mikami', 
+    'Roboto Mono', Roboto,
+    --apple-system,
+    Helvetica Neue,
+    Tsukushi, Quicksand, Ubuntu;
+  color: @base-color;
+}
+
+html {
+  display: table;
+  margin: auto;
+  width: 100%;
+  max-width: 70vh;
+  //margin-top: 0.5vh;
+  //height: 99%;
+  height: 100%;
+  //background-color: #0074a4;
+  //background-color: #bbb;
+  background-color: white;
+}
+
+body {
+  display: table-cell;
+  //vertical-align: middle;
+  background-color: white;
+}
+
+#error {
+  cursor: wait;
+  position: fixed;
+  //display: table;
+  margin: auto;
+  height: 100%; 
+  max-width: 70vh;
+  width: 100%; 
+  overflow: hidden; 
+  opacity: 1; 
+  z-index: 1001; 
+  background-color: darken(white, 1%);
+  -webkit-transition: opacity .5s ease-in-out; 
+  -moz-transition: opacity .5s ease-in-out; 
+  -o-transition: opacity 1.5s ease-in-out; 
+  transition: opacity .5s ease-in-out; 
+  h1 {
+    color: @gray-color;
+    span {
+      display: block;
+      margin-bottom: 1vh;
+      color: @base-color;
+    }
+    b {
+      display: none;
+    }
+    //border: 1px solid green;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    //margin-top: 30vh; 
+    width: auto;
+    //top: 50%;
+    //display: table-cell;
+    //height: 10%;
+    //vertical-align: middle;
+    ////line-height: 10vh;
+    ////margin: auto;
+    cursor: hand;
+    padding: 5vh;
+    position: relative;
+    top: 40vh;
+    //bottom: 0;
+    left: 0;
+    //right: 0;
+    ////width: 50%;
+    ////height: 3%;
+    //margin: auto;
+    //position: absolute;
+    //    top: 50%;
+    //        left: 50%;
+    //            //height: 30%;
+    //                width: 50%;
+    //                    margin: -15% 0 0 -25%;
+    background-color: @light-gray-color;
+    border-radius: 1vh;                                                          
+    transform: translate(0%, -50%);                                             
+    //text-align: center;                                                           
+    //z-index: 6000;                                                                
+    //padding: 47px 25px 53px;                                                      
+    box-shadow: 0 20px 30px 0 fade(black, 20);                                   
+    //opacity: 0;                                                                   
+    //margin: 100px 0 0;                                                            
+                                                       
+  }
+}
+

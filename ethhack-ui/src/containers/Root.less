@@ -1,0 +1,308 @@
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f5f5;
+  -webkit-tap-highlight-color: transparent;
+  //-webkit-touch-callout: none;
+  //-webkit-user-select: none;
+}
+h2, h3, h4 {
+  font-weight: normal;
+}
+.body {
+  &.standalone {
+    margin-top: -1.3vh;
+  }
+  background-color: #ecf5ee;
+  color: #252926;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 55vh;
+  margin: 0 auto;
+  //min-height: 100vh;
+  //height: 100%;
+  //min-height: -webkit-fill-available;
+  //min-height: -moz-available;
+  //min-height: fill-available;
+  display: flex;
+  //padding: 1vh 2vh 0vh 2vh;
+  flex-direction: column;
+  .header {
+    flex-shrink: 0;
+  }
+  /*input {
+    border: none;
+    text-align: center;
+    padding: 1vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 2.2vh;
+    //display: none;
+  }*/
+  .content {
+    //padding: 1vh 1.6vh 0vh 2vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    //-webkit-overflow-scrolling: touch;
+    //-webkit-box-flex: 0;
+    flex-grow: 1;
+  }
+
+  .hito {
+    margin: 0 auto;
+    height: 100%;
+    //0height: 100%;
+    padding: 66.6%;
+    background-image: url(/images/hito_emulator.svg);
+    background-repeat: no-repeat;
+    //background-size: 100%;
+    //background-position: top 3vh;
+    //border: 1px solid green;
+    box-sizing: border-box;
+    position: relative;
+    .title {
+      position: absolute;
+      top: 12vh;
+      left: 13vh;
+      font-size: 2.5vh;
+    }
+    .logo {
+      position: absolute;
+      top: 17.8vh;
+      left: 13vh;
+      width: 4.3vh;
+      height: 4.3vh;
+      background-image: url(/images/eth-logo.svg);
+      background-repeat: no-repeat;
+    }
+    .hito-logo {
+      position: absolute;
+      top: 86vh;
+      left: 29vh;
+      width: 8vh;
+      height: 5vh;
+      background-image: url(/images/hito_logo.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .qr {
+      //border: 1px solid green;
+      position: absolute;
+      top: 27.5vh;
+      left: 38.5vh;
+      width: 15vh;
+      height: 15vh;
+      background-image: url(/images/hito_eth.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+    }
+    .balance {
+      //border: 1px solid magenta;
+      position: absolute;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      top: 15vh;
+      left: 17vh;
+      width: 35vh;
+      height: 6vh;
+      font-size: 6vh;
+      color: #1d1f2a;
+      
+    }
+    .balance-usd {
+      position: absolute;
+      text-align: center;
+      top: 23vh;
+      left: 22vh;
+      //border: 1px solid magenta;
+      font-size: 2.5vh;
+
+    }
+    .table {
+      //border: 1px solid red;
+      position: absolute;
+      top: 27.5vh;
+      left: 13vh;
+      width: 24vh;
+      height: 15vh;
+      table {
+        width: 100%;
+        height: 100%;
+      }
+      td {
+        //border: 1px solid green;
+        font-size: 1.8vh;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        vertical-align: middle;
+        u, b {
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        u {
+          font-size: 3vh;
+        }
+        b {
+          margin-left: 0.3vh;
+          border-bottom: 4px solid;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  font-size: 2vh;
+  text-align: left;
+  padding: 0.7em 1em 1em 1em;
+  //border: 1px dashed gray;
+  border-radius: 1em;
+  background-color: #f5f5f5;
+  margin-top: 1vh;
+}
+
+h1 {
+  text-align: left;
+  font-size: 4vh;
+  b {
+    vertical-align: bottom;
+  }
+  img {
+    display: inline-block;
+    width: 5vh;
+    //padding: 1vh;
+    padding-right: 1vh;
+    padding-bottom: 0.5vh;
+  }
+}
+h2 {
+  background-color: #e6ff83;
+  border: 2px solid #252926;
+  outline: 1vh solid #e6ff83;
+  //border-radius: 0.5vh;
+
+  text-align: left;
+  font-size: 3vh;
+  padding-left: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-bottom: 2vh;
+  margin-top: 4vh;
+  b {
+    //transform: translateY(0.3vh);
+    vertical-align: middle;
+
+  }
+  i {
+    //margin: 0.5vh;
+    //margin: 0vh 1vh 1vh 1vh;
+    margin: 0.5vh 1vh 0.5vh 1vh;
+    margin-right: 1vh;
+    //margin-left: 1vh;
+    vertical-align: middle;
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    &.btc {
+      background: url(/images/icons/icon_btc.svg) center/contain no-repeat;
+    }
+    &.eth {
+      background: url(/images/icons/icon_eth.svg) center/contain no-repeat;
+    }
+    &.wallet_create {
+      background: url(/images/icons/wallet_create.svg) center/contain no-repeat;
+    }
+    &.import_seed {
+      background: url(/images/icons/wallet_import_file.svg) center/contain no-repeat;
+    }
+    &.import_file {
+      background: url(/images/icons/wallet_import_seed.svg) center/contain no-repeat;
+    }
+    &.connect_qr {
+      background: url(/images/icons/connect_qr.svg) center/contain no-repeat;
+    }
+    &.connect_nfc {
+      background: url(/images/icons/connect_nfc.svg) center/contain no-repeat;
+    }
+    &.connect_ble {
+      background: url(/images/icons/connect_ble.svg) center/contain no-repeat;
+    }
+
+  }
+}
+
+#loading {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../images/start.svg') center/cover no-repeat;
+}
+
+.content {
+  margin-top: 6vh;
+}
+
+.projects {
+  > h1 {
+    padding-left: 2vh;
+    position: fixed;
+    top: 1vh;
+    left: 2vh;
+    margin-bottom: 2vh;
+    //background-color: white;
+  }
+  > div {
+    border: 1px dashed gray;
+    //border-radius: 2vh;
+    padding: 1vh 2vh 1vh 2vh;
+    //float: left;
+    margin: 2vh;
+    position: relative;
+    b {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 3vh;
+      padding: 1vh 2vh;
+      cursor: hand;
+    }
+    h1 {
+      font-size: 2.5vh;
+      //position: absolute;
+      //left: 0;
+      //top: 0;
+      padding-bottom: 1vh;
+    }
+    p {
+      text-align: left;
+    }
+    a {
+      padding-top: 1vh;
+      font-size: 1.5vh;
+      padding-bottom: 1vh;
+      display: block;
+      text-align: left;
+    }
+  }
+  img {
+    width: 5vh;
+    height: 5vh;
+  }
+}
