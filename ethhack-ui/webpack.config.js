@@ -70,5 +70,10 @@ module.exports = {
     contentBase: path.resolve(__dirname, './dist'),
     host: '0.0.0.0',
     hot: true,
+    //proxy: {
+    //       '/postvote': {
+    //            router: () => 'https://ethhack.org0',
+    //       }
+    //    }
   },
 };

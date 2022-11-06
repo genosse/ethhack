@@ -169,17 +169,26 @@ class Root extends React.Component {
     let votes = this.state.votes;
     log(votes);
 
-    const provider = new ethers.providers.Web3Provider(
-      window.ethereum,
-      'any'
-    );
-    //let signer =
-    await provider.send('eth_requestAccounts', []);
-    log(provider);
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    //let signer = 
+    const accounts = await provider.send("eth_requestAccounts", []);
 
-    const signer = ethers.getSigner();
-    const signature = await signer.signMessage(message);
-    log(signature);
+    const signer = provider.getSigner();
+    const stringVotes = votes.join(',');
+    const signature = await signer.signMessage(stringVotes);
+    let signedVote = {
+      votes: stringVotes,
+      signature: signature,
+      account: accounts[0],
+    };
+    log(signedVote);
+
+    let url = 'https://ethhack.org/postvote/';
+    $.ajax(url, {
+      data : JSON.stringify(signedVote),
+      contentType : 'application/json',
+      type : 'POST',
+    });
     //provider.send("eth_requestAccounts", []);
     //:v
   }
