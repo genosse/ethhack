@@ -48,6 +48,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@pushprotocol/restapi": "^0.2.1",
     "bech32-buffer": "^0.2.0",
     "bech32-converting": "^1.0.8",
     "ethers": "^5.7.2",
