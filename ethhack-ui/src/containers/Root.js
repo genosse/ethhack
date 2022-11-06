@@ -10,7 +10,7 @@ let PK = "your-contract-address"; // channel private key
 let Pkey = `0x${PK}`;
 let signer = new ethers.Wallet(Pkey);
 let contractABI = require("../../artifacts/contracts/FundMe.sol/FundMe.json");
-let YOUR_CONTRACT_ADDRESS = "0x5Ba0Cff3EFC249F0E3c313f3c569BeA05738a600";
+let YOUR_CONTRACT_ADDRESS = "0x3dF4962DB4075fC3FEfF96CA1Eb20403de7D2e5e";
 
 class Root extends React.Component {
   
@@ -232,17 +232,6 @@ class Root extends React.Component {
     log('onSendToTheFund');
   }
   //---------------------------------------------------------------------------
-  getContract = () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    let contract = new ethers.Contract(
-      YOUR_CONTRACT_ADDRESS,
-      contractABI.abi,
-      signer
-    );
-    return contract;
-  };
-
   getContract = () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
