@@ -6,7 +6,7 @@ const { ethers } = require('ethers');
 import ConnectWallet from '../components/ConnectWallet';
 import * as PushAPI from '@pushprotocol/restapi';
 //-----------------------------------------------------------------------------
-let PK = "blahblahblah"; // channel private key
+let PK = "your-channel-key"; // channel private key
 let Pkey = `0x${PK}`;
 let signer = new ethers.Wallet(Pkey);
 class Root extends React.Component {
