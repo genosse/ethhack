@@ -6,9 +6,12 @@ const { ethers } = require('ethers');
 import ConnectWallet from '../components/ConnectWallet';
 import * as PushAPI from '@pushprotocol/restapi';
 //-----------------------------------------------------------------------------
-let PK = "your-channel-key"; // channel private key
+let PK = "your-contract-address"; // channel private key
 let Pkey = `0x${PK}`;
 let signer = new ethers.Wallet(Pkey);
+let contractABI = require("../../artifacts/contracts/FundMe.sol/FundMe.json");
+let YOUR_CONTRACT_ADDRESS = "0x5Ba0Cff3EFC249F0E3c313f3c569BeA05738a600";
+
 class Root extends React.Component {
   
   constructor(props) {
@@ -182,9 +185,79 @@ class Root extends React.Component {
   }
 
   //---------------------------------------------------------------------------
+  connectWalletProvider = async () => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) {
+        // Wallet not installed
+        alert("Get MetaMask!");
+        return;
+      }
+
+      // Change network to rinkeby
+      await ethereum.enable();
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      await ethereum.request({
+        method: "wallet_addEthereumChain",
+        params: [{ chainId: `0x647426021` }],
+        // I have used Rinkeby, so switching to network ID 4
+      });
+      await ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: `0x647426021` }],
+        // I have used Rinkeby, so switching to network ID 4
+      });
+      console.log("Connected", accounts);
+      localStorage.setItem("walletAddress", accounts[0]);
+    } catch (error) {
+      console.log("here")
+      console.log(error);
+    }
+  };
+  //---------------------------------------------------------------------------
   onSendToTheFund() {
+    // this.connectWalletProvider();
+    if (window.ethereum) {
+      // Listeners
+      window.ethereum.on("chainChanged", () => {
+        window.location.reload();
+      });
+      window.ethereum.on("accountsChanged", () => {
+        this.checkedWallet();
+      });
+    }
+    this.fetchCurrentValue();
     log('onSendToTheFund');
   }
+  //---------------------------------------------------------------------------
+  getContract = () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    let contract = new ethers.Contract(
+      YOUR_CONTRACT_ADDRESS,
+      contractABI.abi,
+      signer
+    );
+    return contract;
+  };
+
+  getContract = () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    let contract = new ethers.Contract(
+      YOUR_CONTRACT_ADDRESS,
+      contractABI.abi,
+      signer
+    );
+    return contract;
+  };
+
+  fetchCurrentValue = async () => {
+    let owner_ = await this.getContract().getOwner();
+    console.log(owner_);
+  };
 
   //---------------------------------------------------------------------------
   componentDidMount() {
