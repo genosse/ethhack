@@ -5,8 +5,12 @@ const { ethers } = require('ethers');
 
 import ConnectWallet from '../components/ConnectWallet';
 import * as PushAPI from '@pushprotocol/restapi';
+
+import { create } from 'ipfs-http-client';
+
 //-----------------------------------------------------------------------------
-let PK = "your-contract-address"; // channel private key
+//let PK = "your-contract-address"; // channel private key
+let PK = "d54bf57ef69cdc47e29fb014d67969b2dd715225b167fdb9b67088def391b313"; // channel private key
 let Pkey = `0x${PK}`;
 let signer = new ethers.Wallet(Pkey);
 let contractABI = require("../../artifacts/contracts/FundMe.sol/FundMe.json");
@@ -191,6 +195,19 @@ class Root extends React.Component {
     });
     //provider.send("eth_requestAccounts", []);
     //:v
+    const ipfs = create();
+
+    this.saveToIPFS(ipfs, signedVote);
+  }
+
+  async saveToIPFS(ipfs, signedVote) {
+
+
+    // Use Mutable file system as a storage for votes
+    await ipfs.files.mkdir('/ethhack')
+
+    // Save the latest vote under a voter address
+    await ipfs.files.write('/ethhack/' + signedVote.addr, JSON.stringify(signedVote), { create: true })
   }
 
   //---------------------------------------------------------------------------
@@ -272,6 +289,7 @@ class Root extends React.Component {
       .then((response) => response.json())
       .then((json) => this.setProjectsJson(json))
       .catch((error) => err(error));
+
   }
 
   handleChange(elm) {
