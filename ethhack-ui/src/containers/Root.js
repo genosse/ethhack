@@ -254,7 +254,7 @@ class Root extends React.Component {
         this.checkedWallet();
       });
     }
-    this.fetchCurrentValue();
+    this.fundSponsorship();
     log('onSendToTheFund');
   }
   //---------------------------------------------------------------------------
@@ -269,9 +269,9 @@ class Root extends React.Component {
     return contract;
   };
 
-  fetchCurrentValue = async () => {
-    let owner_ = await this.getContract().getOwner();
-    console.log(owner_);
+  fetchSponsorship = async () => {
+    let result_ = await this.getContract().fund();
+    console.log(result_);
   };
 
   //---------------------------------------------------------------------------
